@@ -8,6 +8,10 @@
 
 The Workflow React Component for Pub
 
+## Demo
+
+Visit [https://react.storyboard.sudo.pub/](https://react.storyboard.sudo.pub/) for live storybook.
+
 ## Install
 
 Install with [yarn](https://yarnpkg.com)
@@ -19,3 +23,7 @@ Install with [npm](https://www.npmjs.com/)
 ```sh
 npm install @sudopub/storyboard-react --save
 ```
+
+## Documentation
+
+Visit [sudo.pub](https://sudo.pub/) for more information.
