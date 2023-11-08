@@ -18,7 +18,7 @@ export type BoardProps =
     & PropsChildrenAddOn
     & PropsClassNameAddOn;
 
-export const BarkBoard: React.FC<BoardProps> = (props: BoardProps) => {
+export const Board: React.FC<BoardProps> = (props: BoardProps) => {
 
     return (<StyledButton>
         {props.children}

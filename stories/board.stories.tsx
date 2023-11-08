@@ -6,19 +6,19 @@
  */
 
 import { Meta, StoryFn } from "@storybook/react";
-import { BarkBoard } from "../src";
+import { Board } from "../src";
 
 export default {
   title: "Board",
-  component: BarkBoard,
-} as Meta<typeof BarkBoard>;
+  component: Board,
+} as Meta<typeof Board>;
 
-const Template: StoryFn<typeof BarkBoard> = (args: any) => {
+const Template: StoryFn<typeof Board> = (args: any) => {
 
   return (
-    <BarkBoard>
+    <Board>
       {args.children}
-    </BarkBoard>);
+    </Board>);
 };
 
 export const Primary = Template.bind({});

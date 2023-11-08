@@ -1,6 +1,6 @@
 /**
  * @author WMXPY
- * @namespace BarkBoardReact
+ * @namespace Storyboard
  * @description Index
  */
 
