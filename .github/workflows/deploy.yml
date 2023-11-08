@@ -47,7 +47,7 @@ jobs:
           sudoo-build --type typescript-react test
       - name: Build Storybook
         run: |
-          yarn run build
+          npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
