@@ -4,11 +4,11 @@
  * @description Board
  */
 
-import React from "react";
-import styled, { StyledComponent } from "styled-components";
+import * as React from "react";
+import styled from "styled-components";
 import { PropsChildrenAddOn, PropsClassNameAddOn } from "../../util/props";
 
-const StyledButton: StyledComponent<"button", any> = styled.button`
+const StyledButton = styled.button`
     background-color: red;
 `;
 
