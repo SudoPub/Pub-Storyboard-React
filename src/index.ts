@@ -4,4 +4,6 @@
  * @description Index
  */
 
-export * from "./components/board/board";
+export * from "./components/procedure/procedure";
+export * from "./components/storyboard/storyboard";
+
