@@ -34,6 +34,14 @@
     "typescript": "^5.2.2",
     "vite": "^4.5.0"
   },
+  "overrides": {
+    "string-width": "^4",
+    "strip-ansi": "^6"
+  },
+  "resolutions": {
+    "string-width": "^4",
+    "strip-ansi": "^6"
+  },
   "nyc": {
     "extension": [
       ".ts",
