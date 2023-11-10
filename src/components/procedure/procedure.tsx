@@ -32,6 +32,35 @@ export const ProcedureNode: React.FC<ProcedureNodeProps> = (_props: ProcedureNod
             position={Position.Top}
         />
         <div>
+            <div>
+                <div>
+                    <Handle type="source" position={Position.Left} id="l1"
+
+                        style={{
+                            top: 10,
+                        }} />
+                    Left
+                </div>
+                <div>
+                    Right
+                </div>
+            </div>
+            <div>
+                <div>
+                    Left
+                </div>
+                <div>
+                    Right
+                </div>
+            </div>
+            <div>
+                <div>
+                    Left
+                </div>
+                <div>
+                    Right
+                </div>
+            </div>
             <label
                 htmlFor="text"
             >
