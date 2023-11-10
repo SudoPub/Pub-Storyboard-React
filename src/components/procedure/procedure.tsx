@@ -4,11 +4,14 @@
  * @description Procedure
  */
 
+import { createStringPattern } from "@sudoo/pattern";
+import { PUB_PROCEDURE_TYPE, PubProcedureConfiguration } from "@sudopub/essential";
 import * as React from "react";
 import { Handle, Position } from "reactflow";
 import styled from "styled-components";
 import { PropsChildrenAddOn, PropsClassNameAddOn } from "../../util/props";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StyledButton = styled.button`
     background-color: red;
 `;
@@ -19,11 +22,22 @@ export type ProcedureNodeProps =
     & PropsChildrenAddOn
     & PropsClassNameAddOn;
 
-export const ProcedureNode: React.FC<ProcedureNodeProps> = (_props: ProcedureNodeProps) => {
+const exampleProcedure: PubProcedureConfiguration<PUB_PROCEDURE_TYPE.DRIVER> = {
 
-    const onChange = React.useCallback((event: any) => {
-        console.log(event.target.value);
-    }, []);
+    identifier: "test",
+    type: PUB_PROCEDURE_TYPE.DRIVER,
+    payload: {
+        driverName: "test",
+        parameterPatterns: {
+            in: createStringPattern(),
+        },
+        outcomePatterns: {
+            out: createStringPattern(),
+        },
+    },
+};
+
+export const ProcedureNode: React.FC<ProcedureNodeProps> = (_props: ProcedureNodeProps) => {
 
     return (<React.Fragment>
         <Handle
@@ -31,47 +45,29 @@ export const ProcedureNode: React.FC<ProcedureNodeProps> = (_props: ProcedureNod
             id="t2"
             position={Position.Top}
         />
-        <div>
-            <div>
-                <div>
-                    <Handle type="source" position={Position.Left} id="l1"
+        <div style={{
+            width: '256px',
+            border: '1px solid #000',
+        }}>
+            <div style={{
+                display: 'flex',
+            }}>
+                <div style={{ flex: 1 }}>
+                    {Object.keys(exampleProcedure.payload.parameterPatterns).map((key: string) => {
+                        return (<div key={key}>
+                            {key}
+                        </div>);
+                    })}
+                </div>
+                <div style={{ flex: 1 }}>
+                    {Object.keys(exampleProcedure.payload.outcomePatterns).map((key: string) => {
+                        return (<div key={key}>
+                            {key}
+                        </div>);
+                    })}
 
-                        style={{
-                            top: 10,
-                        }} />
-                    Left
-                </div>
-                <div>
-                    Right
                 </div>
             </div>
-            <div>
-                <div>
-                    Left
-                </div>
-                <div>
-                    Right
-                </div>
-            </div>
-            <div>
-                <div>
-                    Left
-                </div>
-                <div>
-                    Right
-                </div>
-            </div>
-            <label
-                htmlFor="text"
-            >
-                Text:
-            </label>
-            <input
-                name="text"
-                onChange={onChange}
-                className="nodrag"
-            />
-            <StyledButton />
         </div>
         <Handle type="source" position={Position.Bottom} id="s1" />
         <Handle
